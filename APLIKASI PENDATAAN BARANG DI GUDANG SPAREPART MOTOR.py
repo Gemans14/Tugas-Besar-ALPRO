@@ -4,7 +4,7 @@ if __name__ == "__main__":
     list_barang = []
 
     while True:
-        system('clear') #cls
+        system('cls') 
         
         print("="*40)
         print("Aplikasi Pendataan Gudang Sparepart Motor : JAYA MOTOR")
