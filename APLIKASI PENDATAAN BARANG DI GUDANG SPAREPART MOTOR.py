@@ -46,3 +46,4 @@ while True :
         HapusBarang ()
     else:
         break
+    print("=========================================")
