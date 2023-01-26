@@ -23,6 +23,11 @@ def UbahBarang(ubah, Nama, Harga, Stok):
     list_harga[ubah -1] = Harga
     list_stok[ubah -1] = Stok
 
+def HapusBarang (hapus):
+    list_Sparepart.pop (hapus-1)
+    list_harga.pop (hapus-1)
+    list_stok.pop (hapus-1)
+
 list_tampilan = ["1. Lihat Barang", "2. Input Barang", "3. Update Barang", "4. Hapus Barang"]
 
 while True :
@@ -56,7 +61,9 @@ while True :
         Stok = int(input())
         UbahBarang (ubah, Nama, Harga, Stok)
     elif menu == 4:
-        HapusBarang ()
+        print("Data yang akan dihapus :")
+        hapus = int(input())
+        HapusBarang (hapus)
     else:
         break
     print("=========================================")
