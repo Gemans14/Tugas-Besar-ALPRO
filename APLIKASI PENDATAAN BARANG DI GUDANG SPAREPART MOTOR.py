@@ -17,7 +17,7 @@ def MasukanBarang (Nama, Harga, Stok):
     stringHarga = ",".join(str(x) for x in list_harga) #mengubah harga dari type int menjadi str dan menggabungkan str menggunakan koma
     stringStok= ",".join(str(x) for x in list_stok) #w untuk membuka txt dengan fungsi write pada file
     my_file = open("listsparepart.txt", "w") #\n untuk enter
-    my_file.write(stringNama + "\n")
+    my_file.write(stringNama + "\n") #\n untuk enter
     my_file.write(stringHarga + "\n")
     my_file.write(stringStok)
     my_file.close()
