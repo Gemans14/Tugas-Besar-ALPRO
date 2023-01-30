@@ -2,10 +2,10 @@ def LihatBarang ():
     print("=========================================")
     print("|             Daftar Barang             |")
     print("=========================================")
-    menu = zip(list_Sparepart, list_harga, list_stok)
+    menu = zip(list_Sparepart, list_harga, list_stok) #zip untuk menggabungkan menjadi 1 list
     print ("|{:<3}| {:<15} | {:<8} | {:<5}|".format("No", "Nama Barang", "Harga", "Stok"))
     print("=========================================")
-    for index, y in enumerate (menu):
+    for index, y in enumerate (menu): #enumerate untuk mendapatkan index dari list data
         Nama, Harga, Stok = y
         print ("|{:<3}| {:<15} | {:<8} | {:<5}|".format( index+1, Nama, Harga, Stok))
 
@@ -14,41 +14,41 @@ def MasukanBarang (Nama, Harga, Stok):
     list_harga.append(Harga)
     list_stok.append(Stok)
     stringNama = ",".join(list_Sparepart)
-    stringHarga = ",".join(str(x) for x in list_harga)
-    stringStok= ",".join(str(x) for x in list_stok)
-    my_file = open("listsparepart.txt", "w")
+    stringHarga = ",".join(str(x) for x in list_harga) #mengubah harga dari type int menjadi str dan menggabungkan str menggunakan koma
+    stringStok= ",".join(str(x) for x in list_stok) #w untuk membuka txt dengan fungsi write pada file
+    my_file = open("listsparepart.txt", "w") #\n untuk enter
     my_file.write(stringNama + "\n")
     my_file.write(stringHarga + "\n")
     my_file.write(stringStok)
     my_file.close()
 
 def UbahBarang(ubah, Nama, Harga, Stok):
-    list_Sparepart[ubah - 1] = Nama
+    list_Sparepart[ubah - 1] = Nama  #-1 karena index dimulai dari 0
     list_harga[ubah -1] = Harga
     list_stok[ubah -1] = Stok
     stringNama = ",".join(list_Sparepart)
     stringHarga = ",".join(list_harga)
-    stringStok= ",".join(str(x) for x in list_stok)
-    my_file = open("listsparepart.txt", "w")
+    stringStok= ",".join(str(x) for x in list_stok) #mengubah harga dari type int menjadi str dan menggabungkan str menggunakan koma
+    my_file = open("listsparepart.txt", "w") #w untuk membuka txt dengan fungsi write pada file
     my_file.write(stringNama + "\n")
     my_file.write(stringHarga + "\n")
     my_file.write(stringStok)
     my_file.close()
 
 def HapusBarang (hapus):
-    list_Sparepart.pop (hapus-1)
-    list_harga.pop (hapus-1)
+    list_Sparepart.pop (hapus-1) 
+    list_harga.pop (hapus-1)  #-1 karena index dimulai dari 0
     list_stok.pop (hapus-1)
     stringNama = ",".join(list_Sparepart)
     stringHarga = ",".join(list_harga)
-    stringStok= ",".join(str(x) for x in list_stok)
-    my_file = open("listsparepart.txt", "w")
+    stringStok= ",".join(str(x) for x in list_stok)  #mengubah harga dari type int menjadi str dan menggabungkan str menggunakan koma
+    my_file = open("listsparepart.txt", "w") #w untuk membuka txt dengan fungsi write pada file
     my_file.write(stringNama + "\n")
     my_file.write(stringHarga + "\n")
     my_file.write(stringStok)
     my_file.close()
 
-my_file = open("listsparepart.txt", "r") 
+my_file = open("listsparepart.txt", "r")  #r untuk membaca file txt
 count = 0
 
 list_Sparepart = []
